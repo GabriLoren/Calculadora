@@ -246,7 +246,7 @@ class MainActivity : AppCompatActivity() {
                     .newEditable(valorEntrante)
             }
             valorEntrante = ""
-            valor1 = 0.0
+
         }
 
         binding.buttonC.setOnClickListener {
