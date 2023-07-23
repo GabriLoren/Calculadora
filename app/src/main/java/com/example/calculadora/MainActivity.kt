@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
         var valor2: Double
         var operacion = ""
         var resultado: Double
+        var resultadoInt: Int
 
 
         binding.button9.setOnClickListener {
@@ -105,9 +106,15 @@ class MainActivity : AppCompatActivity() {
                     }
                     valor1 = resultado
                     operacion = "+"
-                    valorEntrante = ""
+                    resultadoInt = resultado.toInt()
+                    if (resultado == resultadoInt.toDouble())
+                        valorEntrante = resultadoInt.toString()
+                    else valorEntrante = resultado.toString()
+
+
                     binding.textViewResultado.text = Editable.Factory.getInstance()
-                        .newEditable(resultado.toString())
+                        .newEditable(valorEntrante)
+                    valorEntrante = ""
                 } catch (_: java.lang.NumberFormatException) {
 
                 }
@@ -140,9 +147,15 @@ class MainActivity : AppCompatActivity() {
                     }
                     valor1 = resultado
                     operacion = "-"
-                    valorEntrante = ""
+                    resultadoInt = resultado.toInt()
+                    if (resultado == resultadoInt.toDouble())
+                        valorEntrante = resultadoInt.toString()
+                    else valorEntrante = resultado.toString()
+
+
                     binding.textViewResultado.text = Editable.Factory.getInstance()
-                        .newEditable(resultado.toString())
+                        .newEditable(valorEntrante)
+                    valorEntrante = ""
                 } catch (_: java.lang.NumberFormatException) {
 
                 }
@@ -175,9 +188,15 @@ class MainActivity : AppCompatActivity() {
                     }
                     valor1 = resultado
                     operacion = "x"
-                    valorEntrante = ""
+                    resultadoInt = resultado.toInt()
+                    if (resultado == resultadoInt.toDouble())
+                        valorEntrante = resultadoInt.toString()
+                    else valorEntrante = resultado.toString()
+
+
                     binding.textViewResultado.text = Editable.Factory.getInstance()
-                        .newEditable(resultado.toString())
+                        .newEditable(valorEntrante)
+                    valorEntrante = ""
                 } catch (_: java.lang.NumberFormatException) {
 
                 }
@@ -210,10 +229,15 @@ class MainActivity : AppCompatActivity() {
                     }
                     valor1 = resultado
                     operacion = "/"
-                    valorEntrante = ""
-                    binding.textViewResultado.text = Editable.Factory.getInstance()
-                        .newEditable(resultado.toString())
+                    resultadoInt = resultado.toInt()
+                    if (resultado == resultadoInt.toDouble())
+                        valorEntrante = resultadoInt.toString()
+                    else valorEntrante = resultado.toString()
 
+
+                    binding.textViewResultado.text = Editable.Factory.getInstance()
+                        .newEditable(valorEntrante)
+                    valorEntrante = ""
                 } catch (_: java.lang.NumberFormatException) {
 
                 }
@@ -234,8 +258,10 @@ class MainActivity : AppCompatActivity() {
                 }
                 valor1 = resultado
                 valor2 = 0.0
-                valorEntrante = resultado.toString()
-
+                resultadoInt = resultado.toInt()
+                if (resultado == resultadoInt.toDouble())
+                    valorEntrante = resultadoInt.toString()
+                else valorEntrante = resultado.toString()
 
                 binding.textViewResultado.text = Editable.Factory.getInstance()
                     .newEditable(valorEntrante)
