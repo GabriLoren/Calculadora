@@ -3,6 +3,7 @@ package com.example.calculadora
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
+
 import com.example.calculadora.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -11,187 +12,73 @@ class MainActivity : AppCompatActivity() {
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        var valorEntrante: String = ""
-        var valor1: Int = 0
-        var valor2: Int = 0
-        var operacion: String = ""
-        var resultado: Int = 0
+        var valorEntrante = ""
+        var valor1 = 0
+        var valor2: Int
+        var operacion = ""
+        var resultado: Int
+
 
         binding.button9.setOnClickListener {
-            if (operacion == "=") {
-                valor1 = 0
-                valorEntrante = ""
-                valorEntrante += "9"
-
-            } else {
-
-                valorEntrante = ""
-                valorEntrante += "9"
-            }
-
+            valorEntrante += "9"
             binding.textViewResultado.text = Editable.Factory.getInstance()
                 .newEditable(valorEntrante)
         }
 
         binding.button8.setOnClickListener {
-            if (operacion == "=") {
-                valor1 = 0
-                valorEntrante = ""
-                valorEntrante += "8"
-
-            } else {
-
-                valorEntrante = ""
-                valorEntrante += "8"
-            }
-
+            valorEntrante += "8"
             binding.textViewResultado.text = Editable.Factory.getInstance()
                 .newEditable(valorEntrante)
-
 
         }
         binding.button7.setOnClickListener {
-            if (operacion == "=") {
-                valor1 = 0
-                valorEntrante = ""
-                valorEntrante += "7"
-
-            } else {
-
-                valorEntrante = ""
-                valorEntrante += "7"
-            }
-
+            valorEntrante += "7"
             binding.textViewResultado.text = Editable.Factory.getInstance()
                 .newEditable(valorEntrante)
-
 
         }
         binding.button6.setOnClickListener {
-            if (operacion == "=") {
-                valor1 = 0
-                valorEntrante = ""
-                valorEntrante += "6"
-
-            } else {
-
-                valorEntrante = ""
-                valorEntrante += "6"
-            }
-
+            valorEntrante += "6"
             binding.textViewResultado.text = Editable.Factory.getInstance()
                 .newEditable(valorEntrante)
-
 
         }
         binding.button5.setOnClickListener {
-            if (operacion == "=") {
-                valor1 = 0
-                valorEntrante = ""
-                valorEntrante += "5"
-
-            } else {
-
-                valorEntrante = ""
-                valorEntrante += "5"
-            }
-
+            valorEntrante += "5"
             binding.textViewResultado.text = Editable.Factory.getInstance()
                 .newEditable(valorEntrante)
-
 
         }
         binding.button4.setOnClickListener {
-            if (operacion == "=") {
-                valor1 = 0
-                valorEntrante = ""
-                valorEntrante += "4"
-
-            } else {
-
-                valorEntrante = ""
-                valorEntrante += "4"
-            }
-
+            valorEntrante += "4"
             binding.textViewResultado.text = Editable.Factory.getInstance()
                 .newEditable(valorEntrante)
 
-
         }
-
         binding.button3.setOnClickListener {
-            if (operacion == "=") {
-                valor1 = 0
-                valorEntrante = ""
-                valorEntrante += "3"
-
-            } else {
-
-                valorEntrante = ""
-                valorEntrante += "3"
-            }
-
+            valorEntrante += "3"
             binding.textViewResultado.text = Editable.Factory.getInstance()
                 .newEditable(valorEntrante)
 
-
         }
-
         binding.button2.setOnClickListener {
-            if (operacion == "=") {
-                valor1 = 0
-                valorEntrante = ""
-                valorEntrante += "2"
-
-            } else {
-
-                valorEntrante = ""
-                valorEntrante += "2"
-            }
-
+            valorEntrante += "2"
             binding.textViewResultado.text = Editable.Factory.getInstance()
                 .newEditable(valorEntrante)
 
-
         }
-
         binding.button1.setOnClickListener {
-            if (operacion == "=") {
-                valor1 = 0
-                valorEntrante = ""
-                valorEntrante += "1"
-
-            } else {
-
-                valorEntrante = ""
-                valorEntrante += "1"
-            }
-
+            valorEntrante += "1"
             binding.textViewResultado.text = Editable.Factory.getInstance()
                 .newEditable(valorEntrante)
 
-
         }
-
         binding.button0.setOnClickListener {
-            if (operacion == "=") {
-                valor1 = 0
-                valorEntrante = ""
-                valorEntrante += "0"
-
-            } else {
-
-                valorEntrante = ""
-                valorEntrante += "0"
-            }
-
+            valorEntrante += "0"
             binding.textViewResultado.text = Editable.Factory.getInstance()
                 .newEditable(valorEntrante)
 
-
         }
-
-
         //operaciones
         binding.buttonMas.setOnClickListener {
 
@@ -202,7 +89,7 @@ class MainActivity : AppCompatActivity() {
                 try {
                     valor1 = valorEntrante.toInt()
                     valorEntrante = ""
-                } catch (e: NumberFormatException) {
+                } catch (_: NumberFormatException) {
 
                 }
             } else {
@@ -218,9 +105,10 @@ class MainActivity : AppCompatActivity() {
                     }
                     valor1 = resultado
                     operacion = "+"
+                    valorEntrante = ""
                     binding.textViewResultado.text = Editable.Factory.getInstance()
                         .newEditable(resultado.toString())
-                } catch (e: java.lang.NumberFormatException) {
+                } catch (_: java.lang.NumberFormatException) {
 
                 }
 
@@ -236,7 +124,7 @@ class MainActivity : AppCompatActivity() {
                 try {
                     valor1 = valorEntrante.toInt()
                     valorEntrante = ""
-                } catch (e: NumberFormatException) {
+                } catch (_: NumberFormatException) {
 
                 }
             } else {
@@ -252,9 +140,10 @@ class MainActivity : AppCompatActivity() {
                     }
                     valor1 = resultado
                     operacion = "-"
+                    valorEntrante = ""
                     binding.textViewResultado.text = Editable.Factory.getInstance()
                         .newEditable(resultado.toString())
-                } catch (e: java.lang.NumberFormatException) {
+                } catch (_: java.lang.NumberFormatException) {
 
                 }
 
@@ -269,7 +158,7 @@ class MainActivity : AppCompatActivity() {
                 try {
                     valor1 = valorEntrante.toInt()
                     valorEntrante = ""
-                } catch (e: NumberFormatException) {
+                } catch (_: NumberFormatException) {
 
                 }
 
@@ -286,9 +175,10 @@ class MainActivity : AppCompatActivity() {
                     }
                     valor1 = resultado
                     operacion = "x"
+                    valorEntrante = ""
                     binding.textViewResultado.text = Editable.Factory.getInstance()
                         .newEditable(resultado.toString())
-                } catch (e: java.lang.NumberFormatException) {
+                } catch (_: java.lang.NumberFormatException) {
 
                 }
 
@@ -297,8 +187,6 @@ class MainActivity : AppCompatActivity() {
 
         }
         binding.buttonDivision.setOnClickListener {
-
-
             if (operacion == "=" || valor1 == 0) {
                 operacion = "/"
                 binding.textViewResultado.text = Editable.Factory.getInstance()
@@ -306,7 +194,7 @@ class MainActivity : AppCompatActivity() {
                 try {
                     valor1 = valorEntrante.toInt()
                     valorEntrante = ""
-                } catch (e: NumberFormatException) {
+                } catch (_: NumberFormatException) {
 
                 }
             } else {
@@ -322,19 +210,19 @@ class MainActivity : AppCompatActivity() {
                     }
                     valor1 = resultado
                     operacion = "/"
+                    valorEntrante = ""
                     binding.textViewResultado.text = Editable.Factory.getInstance()
                         .newEditable(resultado.toString())
 
-                } catch (e: java.lang.NumberFormatException) {
+                } catch (_: java.lang.NumberFormatException) {
 
                 }
             }
+
         }
 
 
         binding.buttonIgual.setOnClickListener {
-
-
             resultado = 0
             try {
                 valor2 = valorEntrante.toInt()
@@ -357,8 +245,8 @@ class MainActivity : AppCompatActivity() {
                 binding.textViewResultado.text = Editable.Factory.getInstance()
                     .newEditable(valorEntrante)
             }
-
-
+            valorEntrante = ""
+            valor1 = 0
         }
 
         binding.buttonC.setOnClickListener {
@@ -366,10 +254,10 @@ class MainActivity : AppCompatActivity() {
             valorEntrante = ""
             valor1 = 0
             valor2 = 0
+            operacion = ""
 
             binding.textViewResultado.text = Editable.Factory.getInstance()
                 .newEditable(valorEntrante)
-
         }
     }
 }
