@@ -13,10 +13,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         var valorEntrante = ""
-        var valor1 = 0
-        var valor2: Int
+        var valor1 = 0.0
+        var valor2: Double
         var operacion = ""
-        var resultado: Int
+        var resultado: Double
 
 
         binding.button9.setOnClickListener {
@@ -82,21 +82,21 @@ class MainActivity : AppCompatActivity() {
         //operaciones
         binding.buttonMas.setOnClickListener {
 
-            if (operacion == "=" || valor1 == 0) {
+            if (operacion == "=" || valor1 == 0.0) {
                 operacion = "+"
                 binding.textViewResultado.text = Editable.Factory.getInstance()
                     .newEditable("")
                 try {
-                    valor1 = valorEntrante.toInt()
+                    valor1 = valorEntrante.toDouble()
                     valorEntrante = ""
                 } catch (_: NumberFormatException) {
 
                 }
             } else {
 
-                resultado = 0
+                resultado = 0.0
                 try {
-                    valor2 = valorEntrante.toInt()
+                    valor2 = valorEntrante.toDouble()
                     when (operacion) {
                         "x" -> resultado = valor1 * valor2
                         "/" -> resultado = valor1 / valor2
@@ -117,21 +117,21 @@ class MainActivity : AppCompatActivity() {
 
         binding.buttonMenos.setOnClickListener {
 
-            if (operacion == "=" || valor1 == 0) {
+            if (operacion == "=" || valor1 == 0.0) {
                 operacion = "-"
                 binding.textViewResultado.text = Editable.Factory.getInstance()
                     .newEditable("")
                 try {
-                    valor1 = valorEntrante.toInt()
+                    valor1 = valorEntrante.toDouble()
                     valorEntrante = ""
                 } catch (_: NumberFormatException) {
 
                 }
             } else {
 
-                resultado = 0
+                resultado = 0.0
                 try {
-                    valor2 = valorEntrante.toInt()
+                    valor2 = valorEntrante.toDouble()
                     when (operacion) {
                         "x" -> resultado = valor1 * valor2
                         "/" -> resultado = valor1 / valor2
@@ -151,12 +151,12 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.buttonX.setOnClickListener {
-            if (operacion == "=" || valor1 == 0) {
+            if (operacion == "=" || valor1 == 0.0) {
                 operacion = "x"
                 binding.textViewResultado.text = Editable.Factory.getInstance()
                     .newEditable("")
                 try {
-                    valor1 = valorEntrante.toInt()
+                    valor1 = valorEntrante.toDouble()
                     valorEntrante = ""
                 } catch (_: NumberFormatException) {
 
@@ -164,9 +164,9 @@ class MainActivity : AppCompatActivity() {
 
             } else {
 
-                resultado = 0
+                resultado = 0.0
                 try {
-                    valor2 = valorEntrante.toInt()
+                    valor2 = valorEntrante.toDouble()
                     when (operacion) {
                         "x" -> resultado = valor1 * valor2
                         "/" -> resultado = valor1 / valor2
@@ -187,21 +187,21 @@ class MainActivity : AppCompatActivity() {
 
         }
         binding.buttonDivision.setOnClickListener {
-            if (operacion == "=" || valor1 == 0) {
+            if (operacion == "=" || valor1 == 0.0) {
                 operacion = "/"
                 binding.textViewResultado.text = Editable.Factory.getInstance()
                     .newEditable("")
                 try {
-                    valor1 = valorEntrante.toInt()
+                    valor1 = valorEntrante.toDouble()
                     valorEntrante = ""
                 } catch (_: NumberFormatException) {
 
                 }
             } else {
 
-                resultado = 0
+                resultado = 0.0
                 try {
-                    valor2 = valorEntrante.toInt()
+                    valor2 = valorEntrante.toDouble()
                     when (operacion) {
                         "x" -> resultado = valor1 * valor2
                         "/" -> resultado = valor1 / valor2
@@ -223,9 +223,9 @@ class MainActivity : AppCompatActivity() {
 
 
         binding.buttonIgual.setOnClickListener {
-            resultado = 0
+            resultado = 0.0
             try {
-                valor2 = valorEntrante.toInt()
+                valor2 = valorEntrante.toDouble()
                 when (operacion) {
                     "x" -> resultado = valor1 * valor2
                     "/" -> resultado = valor1 / valor2
@@ -233,7 +233,7 @@ class MainActivity : AppCompatActivity() {
                     "-" -> resultado = valor1 - valor2
                 }
                 valor1 = resultado
-                valor2 = 0
+                valor2 = 0.0
                 valorEntrante = resultado.toString()
 
 
@@ -246,14 +246,14 @@ class MainActivity : AppCompatActivity() {
                     .newEditable(valorEntrante)
             }
             valorEntrante = ""
-            valor1 = 0
+            valor1 = 0.0
         }
 
         binding.buttonC.setOnClickListener {
-            resultado = 0
+            resultado = 0.0
             valorEntrante = ""
-            valor1 = 0
-            valor2 = 0
+            valor1 = 0.0
+            valor2 = 0.0
             operacion = ""
 
             binding.textViewResultado.text = Editable.Factory.getInstance()
